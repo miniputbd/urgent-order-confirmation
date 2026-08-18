@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Miniput | Order Confirmed</title>
+<meta name="description" content="Miniput Order Confirmation">
+
+<!-- Separate lightweight image used only for the social preview thumbnail -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Miniput | Order Confirmed">
+<meta property="og:url" content="https://miniputbd.github.io/urgent-order-confirmation/">
+<meta property="og:description" content="Miniput Order Confirmation">
+<meta property="og:image" content="https://miniputbd.github.io/urgent-order-confirmation/urgent-order-confirmation-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Miniput Order Confirmation">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Miniput | Order Confirmed">
+<meta name="twitter:description" content="Miniput Order Confirmation">
+<meta name="twitter:image" content="https://miniputbd.github.io/urgent-order-confirmation/urgent-order-confirmation-preview.jpg">
+
+<style>
+:root{
+  --cream:#f7f0e4;
+  --card:#fffdf9;
+  --brown:#68452f;
+  --brownDark:#503323;
+  --green:#91a58a;
+  --greenDark:#718769;
+  --greenSoft:#e9efe5;
+  --greenLine:#c9d7c3;
+  --red:#b96856;
+  --redSoft:#f5e5de;
+  --text:#40372f;
+  --muted:#776d64;
+  --border:#dfd5c7;
+  --shadow:0 8px 24px rgba(75,52,35,.055);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--text);
+  font-family:"Noto Sans Bengali","Noto Sans",system-ui,-apple-system,
+  BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.22;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Cg fill='none' stroke='%2368452f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='.35'%3E%3Crect x='40' y='40' width='58' height='68' rx='4'/%3E%3Cpath d='M52 92l14-18 10 10 12-16 10 24'/%3E%3Ccircle cx='58' cy='58' r='4'/%3E%3Cpath d='M330 46h34v26h-34z'/%3E%3Cpath d='M330 46l17-11 17 11'/%3E%3Cpath d='M347 46v26'/%3E%3Ccircle cx='150' cy='230' r='16'/%3E%3Ccircle cx='210' cy='230' r='16'/%3E%3Cpath d='M150 214h60l14-30h26'/%3E%3Cpath d='M100 380h36v28h-36z'/%3E%3C/g%3E%3Cg fill='%2391a58a' opacity='.3'%3E%3Ccircle cx='120' cy='100' r='4'/%3E%3Ccircle cx='260' cy='120' r='5'/%3E%3Ccircle cx='420' cy='170' r='4'/%3E%3Ccircle cx='170' cy='330' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat;
+}
+
+.page{
+  width:min(920px,calc(100% - 32px));
+  margin:auto;
+  padding:28px 0 48px;
+}
+
+.header{
+  text-align:center;
+  padding:8px 0 26px;
+}
+
+.logo{
+  width:170px;
+  height:auto;
+  display:block;
+  margin:0 auto 34px;
+  opacity:.65;
+}
+
+.languageSwitch{
+  width:230px;
+  height:48px;
+  margin:0 auto 28px;
+  padding:4px;
+  border:1px solid #d4c5b4;
+  border-radius:50px;
+  background:#fffaf3;
+  display:flex;
+  box-shadow:0 3px 12px rgba(75,52,35,.05);
+}
+
+.languageSwitch button{
+  flex:1;
+  border:0;
+  border-radius:50px;
+  background:transparent;
+  color:var(--brown);
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.languageSwitch button.active{
+  background:var(--brown);
+  color:#fff;
+}
+
+.heroTitle{
+  margin:0;
+  color:var(--brownDark);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(34px,5vw,54px);
+  line-height:1.12;
+  font-weight:700;
+}
+
+.heroSubtitle{
+  margin:15px auto 0;
+  max-width:680px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+.confirmImageWrap{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:12px;
+  box-shadow:var(--shadow);
+  margin-bottom:22px;
+}
+
+.confirmImage{
+  width:100%;
+  display:block;
+  border-radius:17px;
+  height:auto;
+}
+
+.contentCard{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:25px 28px;
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+}
+
+.sectionHeading{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:0 0 16px;
+  color:var(--green);
+  font-size:24px;
+  line-height:1.35;
+  font-weight:750;
+}
+
+.headingIcon{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  border-radius:13px;
+  background:var(--greenSoft);
+  border:1px solid var(--greenLine);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--greenDark);
+}
+
+.headingIcon svg{
+  width:22px;
+  height:22px;
+}
+
+.contentText{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.85;
+}
+
+.contentText p{
+  margin:0 0 13px;
+}
+
+.contentText p:last-child{
+  margin-bottom:0;
+}
+
+.policyList{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.policyList li{
+  position:relative;
+  padding:11px 0 11px 27px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.75;
+  border-bottom:1px solid #ebe3d8;
+}
+
+.policyList li:last-child{
+  border-bottom:0;
+  padding-bottom:0;
+}
+
+.policyList li:first-child{
+  padding-top:0;
+}
+
+
+.commitmentList{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.commitmentList li{
+  position:relative;
+  padding:11px 0 11px 27px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.75;
+  border-bottom:1px solid #ebe3d8;
+}
+
+.commitmentList li:last-child{
+  border-bottom:0;
+  padding-bottom:0;
+}
+
+.commitmentList li:first-child{
+  padding-top:0;
+}
+
+.commitmentList li::before{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:19px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--green);
+}
+
+.commitmentList li:first-child::before{
+  top:8px;
+}
+
+.policyList li::before{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:19px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--green);
+}
+
+.policyList li:first-child::before{
+  top:8px;
+}
+
+.timelineIntro{
+  margin:-2px 0 16px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.75;
+}
+
+.timelineWrap{
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+
+.timelineTable{
+  width:100%;
+  border-collapse:collapse;
+  background:#fffdf9;
+}
+
+.timelineTable th,
+.timelineTable td{
+  padding:13px 14px;
+  border-bottom:1px solid #e5ddd2;
+  border-right:1px solid #e5ddd2;
+  font-size:14px;
+  line-height:1.55;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.timelineTable th:last-child,
+.timelineTable td:last-child{
+  border-right:0;
+}
+
+.timelineTable th{
+  background:#faf5ed;
+  color:var(--brownDark);
+  font-weight:750;
+}
+
+.timelineTable tr:last-child td{
+  border-bottom:0;
+}
+
+.timelineTable .serviceBlock{
+  width:25%;
+  text-align:center;
+  vertical-align:middle;
+  font-weight:750;
+  color:var(--text);
+  white-space:pre-line;
+}
+
+.timelineTable .pathaoBlock{
+  background:var(--greenSoft);
+  color:#60705b;
+}
+
+.timelineTable .saBlock{
+  background:var(--redSoft);
+  color:#a45645;
+}
+
+/* Full-row service colors */
+.timelineTable .pathaoRow td{
+  background:var(--greenSoft);
+  color:#60705b;
+}
+
+.timelineTable .saRow td{
+  background:var(--redSoft);
+  color:#a45645;
+}
+
+.timelineTable th:nth-child(1),
+.timelineTable td:nth-child(1){ width:25%; }
+.timelineTable th:nth-child(2),
+.timelineTable td:nth-child(2){ width:50%; text-align:center; white-space:nowrap; }
+.timelineTable th:nth-child(3),
+.timelineTable td:nth-child(3){ width:25%; text-align:center; white-space:nowrap; }
+
+
+
+.timelineClarification{
+  margin:0 0 12px;
+  padding:11px 14px;
+  border-radius:14px;
+  border:1px solid var(--greenLine);
+  border-left:4px solid var(--green);
+  background:var(--greenSoft);
+  color:#60705b;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.timelineNote{
+  margin-top:12px;
+  padding:13px 15px;
+  border-radius:15px;
+  border:1px solid var(--greenLine);
+  border-left:5px solid var(--green);
+  background:var(--greenSoft);
+  color:#60705b;
+  font-size:13.5px;
+  line-height:1.7;
+}
+
+.footer{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.footer strong{color:var(--brown)}
+
+.footerLink{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin:0 5px;
+  padding:9px 16px;
+  border:1px solid #e4dbcf;
+  border-radius:50px;
+  background:#fffdf9;
+  color:var(--brown);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+}
+
+.footerLink svg{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex:0 0 17px;
+}
+
+.footerLink:nth-child(2) svg{
+  fill:currentColor;
+  stroke:none;
+}
+
+@media(max-width:600px){
+  .page{
+    width:calc(100% - 18px);
+    padding-top:20px;
+  }
+
+  .logo{
+    width:150px;
+    margin-bottom:30px;
+  }
+
+  .languageSwitch{
+    margin-bottom:25px;
+  }
+
+  .heroTitle{
+    font-size:29px;
+  }
+
+  .heroSubtitle{
+    font-size:14px;
+    margin-top:12px;
+  }
+
+  .confirmImageWrap{
+    padding:8px;
+    border-radius:19px;
+  }
+
+  .confirmImage{
+    border-radius:13px;
+  }
+
+  .contentCard{
+    padding:20px 17px;
+    border-radius:18px;
+  }
+
+  .sectionHeading{
+    font-size:20px;
+    gap:10px;
+    margin-bottom:14px;
+  }
+
+  .headingIcon{
+    width:37px;
+    height:37px;
+    flex-basis:37px;
+    border-radius:12px;
+  }
+
+  .headingIcon svg{
+    width:20px;
+    height:20px;
+  }
+
+  .contentText{
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  .policyList li{
+    font-size:13px;
+    line-height:1.75;
+    padding-left:24px;
+  }
+
+  .commitmentList li{
+    font-size:13px;
+    line-height:1.75;
+    padding-left:24px;
+  }
+
+  .timelineIntro{
+    font-size:13px;
+  }
+
+  .timelineWrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .timelineTable{
+    min-width:720px;
+  }
+
+  .timelineTable th,
+  .timelineTable td{
+    padding:10px 8px;
+    font-size:11px;
+    line-height:1.45;
+  }
+
+  .timelineClarification{
+    font-size:12.5px;
+    line-height:1.65;
+  }
+
+  .timelineNote{
+    font-size:12.5px;
+    padding:12px 13px;
+  }
+
+  .footerLink{
+    padding:8px 13px;
+    font-size:12px;
+    margin:0 3px;
+  }
+}
+
+@media(max-width:390px){
+  .heroTitle{
+    font-size:26px;
+  }
+
+  .timelineTable th,
+  .timelineTable td{
+    font-size:10.5px;
+    padding:9px 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="header">
+
+  <img
+    class="logo"
+    src="./miniput-logo.png"
+    alt="Miniput">
+
+  <div class="languageSwitch">
+    <button id="bnBtn" class="active">বাংলা</button>
+    <button id="enBtn">English</button>
+  </div>
+
+  <!-- Main heading stays as Order Confirmed -->
+  <h1 class="heroTitle" id="pageTitle">অর্ডার নিশ্চিত হয়েছে</h1>
+
+  <p class="heroSubtitle" id="pageSubtitle"><strong>মিনিপুটে</strong> আপনার অর্ডারটি <strong>জরুরি</strong> সময়সীমায় গ্রহণ করা হয়েছে।</p>
+
+</header>
+
+
+<!-- SAME IMAGE IS ALSO USED AS THE LINK-PREVIEW THUMBNAIL -->
+
+<section class="confirmImageWrap">
+
+  <img
+    class="confirmImage"
+    src="./order-confirmation.jpg"
+    alt="Miniput Order Confirmation">
+
+</section>
+
+
+<!-- IMPORTANT NOTES -->
+
+<section class="contentCard">
+
+  <h2 class="sectionHeading">
+
+    <span class="headingIcon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 10.5v5"/>
+        <path d="M12 7.5h.01"/>
+      </svg>
+    </span>
+
+    <span id="noteHeading">বিশেষ দ্রষ্টব্য</span>
+
+  </h2>
+
+  <ul class="policyList">
+
+    <li id="policy1">
+      কাস্টমাইজ অর্ডারের টাইমলাইন গণনা শুরু হবে ছবি বা প্রয়োজনীয় তথ্য পাওয়ার পর থেকে।
+    </li>
+
+    <li id="policy2">
+      কাস্টমাইজ অর্ডার কনফার্ম হওয়ার পর কোনো অবস্থাতেই ক্যান্সেল করা সম্ভব নয়।
+    </li>
+
+    <li id="policy3">
+      ইসলামিক ও রেডিমেড গিফট নির্ধারিত সময় অনুযায়ী ডেলিভারি দেওয়া হবে।
+    </li>
+
+    <li id="policy4">
+      কুরিয়ারে পাঠানো অর্ডারে ক্যান্সেলেশন সম্ভব নয়। কুরিয়ার জটিলতায় আমরা সর্বোচ্চ সহযোগিতা ও সমাধান নিশ্চিত করব।
+    </li>
+
+    <li id="policy5">
+      আমাদের সকল গিফটের মূল্য কুরিয়ার চার্জ ব্যতীত। কুরিয়ার চার্জ গিফটের সাইজ ও ওজন অনুসারে নির্ধারণ হয়।
+    </li>
+
+  </ul>
+
+</section>
+
+
+<!-- OUR COMMITMENT -->
+
+<section class="contentCard">
+
+  <h2 class="sectionHeading">
+
+    <span class="headingIcon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 7.5v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9"/>
+        <path d="M3.5 7.5h17"/>
+        <path d="M12 7.5V19"/>
+        <path d="M12 7.5H8.2a2.2 2.2 0 1 1 0-4.4c2.2 0 3.8 2.7 3.8 4.4Z"/>
+        <path d="M12 7.5h3.8a2.2 2.2 0 1 0 0-4.4c-2.2 0-3.8 2.7-3.8 4.4Z"/>
+      </svg>
+    </span>
+
+    <span id="commitmentHeading">আমাদের প্রতিশ্রুতি</span>
+
+  </h2>
+
+  <ul class="commitmentList">
+
+    <li id="message1">
+      আপনাদের প্রতিটি মূল্যবান স্মৃতি আমরা নিখুঁতভাবে, আন্তরিক যত্নে এবং সর্বোচ্চ মনোযোগ দিয়ে তৈরি করি।
+    </li>
+
+    <li id="message2">
+      আপনাকে প্রতিশ্রুত নির্ধারিত সময়ের মধ্যেই আপনার অর্ডার প্রস্তুত করে কুরিয়ারে পাঠানো হবে ইনশাআল্লাহ।
+    </li>
+
+    <li id="message3">
+      তিন বছরের এই পথচলায় আপনাদের বিশ্বাস ও ভালোবাসা আমাদের সবচেয়ে বড় প্রাপ্তি, যা প্রতিনিয়ত অনুপ্রেরণা জোগায় আপনাদের হাতে পৌঁছে দিতে সেরা ও প্রিমিয়াম কোয়ালিটির হ্যান্ডক্রাফ্ট গিফট।
+    </li>
+
+    <li id="message4">
+      আপনার সহযোগিতার জন্য মিনিপুটের পক্ষ থেকে আন্তরিক ধন্যবাদ! 🌻
+    </li>
+
+  </ul>
+
+</section>
+
+
+<!-- COURIER DELIVERY TIMELINE -->
+
+<section class="contentCard">
+
+  <h2 class="sectionHeading">
+
+    <span class="headingIcon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h11v11H3z"/>
+        <path d="M14 10h4l3 3v4h-7z"/>
+        <circle cx="7" cy="19" r="2"/>
+        <circle cx="18" cy="19" r="2"/>
+        <path d="M14 14h6"/>
+      </svg>
+    </span>
+
+    <span id="timelineHeading">কুরিয়ারে দেওয়ার পর ডেলিভারির সময়সীমা</span>
+
+  </h2>
+
+  <div class="timelineClarification" id="timelineClarification">
+    এই সময়সীমা গিফট কুরিয়ারে দেওয়ার পর থেকে প্রযোজ্য; গিফট প্রস্তুতের সময় এর অন্তর্ভুক্ত নয়।
+  </div>
+
+  <div class="timelineWrap">
+
+    <table class="timelineTable">
+
+      <thead>
+        <tr>
+          <th id="thService">ডেলিভারি সার্ভিস</th>
+          <th id="thArea">ডেলিভারি এলাকা</th>
+          <th id="thTime">সময়সীমা</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr class="pathaoRow">
+          <td rowspan="3" id="homeService" class="serviceBlock pathaoBlock">হোম ডেলিভারি
+(পাঠাও কুরিয়ার)</td>
+          <td id="homeCity">চট্টগ্রাম শহরের মধ্যে</td>
+          <td id="homeCityTime">একই দিন অথবা পরদিন</td>
+        </tr>
+
+        <tr class="pathaoRow">
+          <td id="homeDhaka">ঢাকা এবং কক্সবাজার</td>
+          <td id="homeDhakaTime">১–২ দিন</td>
+        </tr>
+
+        <tr class="pathaoRow">
+          <td id="homeOther">অন্যান্য জেলা</td>
+          <td id="homeOtherTime">২–৩ দিন</td>
+        </tr>
+
+        <tr class="saRow">
+          <td rowspan="3" id="officeService" class="serviceBlock saBlock">এস এ পরিবহন
+অফিস ডেলিভারি</td>
+          <td id="officeChattogram">চট্টগ্রাম বিভাগের মধ্যে</td>
+          <td id="officeChattogramTime">১ দিন</td>
+        </tr>
+
+        <tr class="saRow">
+          <td id="officeDhaka">ঢাকা এবং গাজীপুর</td>
+          <td id="officeDhakaTime">১ দিন</td>
+        </tr>
+
+        <tr class="saRow">
+          <td id="officeOther">অন্যান্য জেলা</td>
+          <td id="officeOtherTime">২ দিন</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="timelineNote" id="timelineNote">
+    কুরিয়ার সার্ভিস, লোকেশন ও অনাকাঙ্ক্ষিত পরিস্থিতির কারণে ডেলিভারি সময় কিছুটা পরিবর্তিত হতে পারে। আমরা পূর্বের অভিজ্ঞতার ভিত্তিতে আনুমানিক সময়সীমা উল্লেখ করেছি, যাতে আপনি অর্ডারটি হাতে পাওয়ার একটি পরিষ্কার ধারণা পান।
+  </div>
+</section>
+
+<footer class="footer">
+
+  <a class="footerLink" href="https://miniput.store" target="_blank" rel="noopener" aria-label="Miniput Store">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M3 12h18"/>
+      <path d="M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21"/>
+      <path d="M12 3c-2.4 2.5-3.6 5.5-3.6 9S9.6 18.5 12 21"/>
+    </svg>
+    <span>miniput.store</span>
+  </a>
+
+  <a class="footerLink" href="https://miniputbd.github.io" target="_blank" rel="noopener" aria-label="Miniput GitHub">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.48.09.66-.21.66-.46v-1.7c-2.68.58-3.25-1.13-3.25-1.13-.44-1.12-1.07-1.42-1.07-1.42-.87-.6.07-.59.07-.59.96.07 1.46.99 1.46.99.86 1.46 2.25 1.04 2.8.8.09-.62.34-1.04.61-1.28-2.14-.24-4.39-1.07-4.39-4.76 0-1.05.38-1.91 1-2.58-.1-.24-.43-1.22.1-2.54 0 0 .82-.26 2.62.99a9.1 9.1 0 0 1 4.77 0c1.8-1.25 2.62-.99 2.62-.99.53 1.32.2 2.3.1 2.54.62.67 1 1.53 1 2.58 0 3.7-2.26 4.51-4.41 4.75.35.3.66.89.66 1.8v2.65c0 .25.18.55.67.46A9.5 9.5 0 0 0 12 2.5Z"/>
+    </svg>
+    <span>miniputbd.github.io</span>
+  </a>
+
+</footer>
+
+</div>
+
+
+<script>
+const bn = {
+  title: "অর্ডার নিশ্চিত হয়েছে",
+  subtitle: "<strong>মিনিপুটে</strong> আপনার অর্ডারটি <strong>জরুরি</strong> সময়সীমায় গ্রহণ করা হয়েছে।",
+
+  commitment: "আমাদের প্রতিশ্রুতি",
+
+  m1: "আপনাদের প্রতিটি মূল্যবান স্মৃতি আমরা নিখুঁতভাবে, আন্তরিক যত্নে এবং সর্বোচ্চ মনোযোগ দিয়ে তৈরি করি।",
+  m2: "আপনাকে প্রতিশ্রুত নির্ধারিত সময়ের মধ্যেই আপনার অর্ডার প্রস্তুত করে কুরিয়ারে পাঠানো হবে ইনশাআল্লাহ।",
+  m3: "তিন বছরের এই পথচলায় আপনাদের বিশ্বাস ও ভালোবাসা আমাদের সবচেয়ে বড় প্রাপ্তি, যা প্রতিনিয়ত অনুপ্রেরণা জোগায় আপনাদের হাতে পৌঁছে দিতে সেরা ও প্রিমিয়াম কোয়ালিটির হ্যান্ডক্রাফ্ট গিফট।",
+  m4: "আপনার সহযোগিতার জন্য মিনিপুটের পক্ষ থেকে আন্তরিক ধন্যবাদ! 🌻",
+
+  note: "বিশেষ দ্রষ্টব্য",
+
+  p1: "কাস্টমাইজ অর্ডারের টাইমলাইন গণনা শুরু হবে ছবি বা প্রয়োজনীয় তথ্য পাওয়ার পর থেকে।",
+  p2: "কাস্টমাইজ অর্ডার কনফার্ম হওয়ার পর কোনো অবস্থাতেই ক্যান্সেল করা সম্ভব নয়।",
+  p3: "ইসলামিক ও রেডিমেড গিফট নির্ধারিত সময় অনুযায়ী ডেলিভারি দেওয়া হবে।",
+  p4: "কুরিয়ারে পাঠানো অর্ডারে ক্যান্সেলেশন সম্ভব নয়। কুরিয়ার জটিলতায় আমরা সর্বোচ্চ সহযোগিতা ও সমাধান নিশ্চিত করব।",
+  p5: "আমাদের সকল গিফটের মূল্য কুরিয়ার চার্জ ব্যতীত। কুরিয়ার চার্জ গিফটের সাইজ ও ওজন অনুসারে নির্ধারণ হয়।",
+
+  timeline: "কুরিয়ারে দেওয়ার পর ডেলিভারির সময়সীমা",
+  intro: "কুরিয়ার সার্ভিস, লোকেশন ও অনাকাঙ্ক্ষিত পরিস্থিতির কারণে ডেলিভারি সময় কিছুটা পরিবর্তিত হতে পারে। আমরা পূর্বের অভিজ্ঞতার ভিত্তিতে আনুমানিক সময়সীমা উল্লেখ করেছি, যাতে আপনি অর্ডারটি হাতে পাওয়ার একটি পরিষ্কার ধারণা পান।",
+  clarification: "এই সময়সীমা গিফট কুরিয়ারে দেওয়ার পর থেকে প্রযোজ্য; গিফট প্রস্তুতের সময় এর অন্তর্ভুক্ত নয়।",
+  service: "ডেলিভারি সার্ভিস",
+  area: "ডেলিভারি এলাকা",
+  time: "সময়সীমা",
+  homeService: "হোম ডেলিভারি\n(পাঠাও কুরিয়ার)",
+  homeCity: "চট্টগ্রাম শহরের মধ্যে",
+  homeCityTime: "একই দিন অথবা পরদিন",
+  homeDhaka: "ঢাকা এবং কক্সবাজার",
+  homeDhakaTime: "১–২ দিন",
+  homeOther: "অন্যান্য জেলা",
+  homeOtherTime: "২–৩ দিন",
+  officeService: "এস এ পরিবহন\nঅফিস ডেলিভারি",
+  officeChattogram: "চট্টগ্রাম বিভাগের মধ্যে",
+  officeChattogramTime: "১ দিন",
+  officeDhaka: "ঢাকা এবং গাজীপুর",
+  officeDhakaTime: "১ দিন",
+  officeOther: "অন্যান্য জেলা",
+  officeOtherTime: "২ দিন"
+};
+
+const en = {
+  title: "Order Confirmed",
+  subtitle: "Your order at <strong>Miniput</strong> has been confirmed under the <strong>Urgent</strong> timeline.",
+
+  commitment: "Our Commitment",
+
+  m1: "We create each of your precious memories with meticulous attention, genuine care, and the highest level of dedication.",
+  m2: "Your order will be prepared and handed over to the courier within the promised timeline, InshaAllah.",
+  m3: "Over the past three years, your trust and love have been our greatest reward. They continue to inspire us to deliver premium quality handcrafted gifts to your hands.",
+  m4: "Thank you sincerely for your cooperation and support from everyone at Miniput! 🌻",
+
+  note: "Important Notes",
+
+  p1: "The timeline for customized orders begins once we receive the required photos or information.",
+  p2: "Once a customized order has been confirmed, it cannot be cancelled under any circumstances.",
+  p3: "Islamic and ready-made gifts will be delivered according to their specified timeline.",
+  p4: "Orders that have already been handed over to the courier cannot be cancelled. In case of courier-related complications, we will provide our best possible support and assistance.",
+  p5: "The prices of all our gifts exclude courier charges. Courier charges are determined according to the size and weight of the gift.",
+
+  timeline: "Delivery Timeline After Handover to Courier",
+  intro: "Delivery time may vary slightly depending on the courier service, location, or unforeseen circumstances. The estimated timeline is based on our previous delivery experience, so you can have a clear idea of when to expect your order.",
+  clarification: "This timeline starts after your gift has been handed over to the courier and does not include the gift preparation time.",
+  service: "Delivery Service",
+  area: "Delivery Area",
+  time: "Timeline",
+  homeService: "Home Delivery\n(Pathao Courier)",
+  homeCity: "Inside Chattogram City",
+  homeCityTime: "Same day or next day",
+  homeDhaka: "Dhaka and Cox's Bazar",
+  homeDhakaTime: "1–2 days",
+  homeOther: "Other Districts",
+  homeOtherTime: "2–3 days",
+  officeService: "S.A. Paribahan Office\nDelivery",
+  officeChattogram: "Within Chattogram District",
+  officeChattogramTime: "1 day",
+  officeDhaka: "Dhaka and Gazipur",
+  officeDhakaTime: "1 day",
+  officeOther: "Other Districts",
+  officeOtherTime: "2 days"
+};
+
+function setLanguage(data, lang){
+  document.documentElement.lang = lang === "bn" ? "bn" : "en";
+
+  document.getElementById("pageTitle").textContent = data.title;
+  document.getElementById("pageSubtitle").innerHTML = data.subtitle;
+
+  document.getElementById("commitmentHeading").textContent = data.commitment;
+
+  document.getElementById("message1").textContent = data.m1;
+  document.getElementById("message2").textContent = data.m2;
+  document.getElementById("message3").textContent = data.m3;
+  document.getElementById("message4").textContent = data.m4;
+
+  document.getElementById("noteHeading").textContent = data.note;
+  document.getElementById("policy1").textContent = data.p1;
+  document.getElementById("policy2").textContent = data.p2;
+  document.getElementById("policy3").textContent = data.p3;
+  document.getElementById("policy4").textContent = data.p4;
+  document.getElementById("policy5").textContent = data.p5;
+
+  document.getElementById("timelineHeading").textContent = data.timeline;
+  document.getElementById("timelineClarification").textContent = data.clarification;
+  document.getElementById("timelineNote").textContent = data.intro;
+  document.getElementById("thService").textContent = data.service;
+  document.getElementById("thArea").textContent = data.area;
+  document.getElementById("thTime").textContent = data.time;
+
+  document.getElementById("homeService").textContent = data.homeService;
+  document.getElementById("homeCity").textContent = data.homeCity;
+  document.getElementById("homeCityTime").textContent = data.homeCityTime;
+  document.getElementById("homeDhaka").textContent = data.homeDhaka;
+  document.getElementById("homeDhakaTime").textContent = data.homeDhakaTime;
+  document.getElementById("homeOther").textContent = data.homeOther;
+  document.getElementById("homeOtherTime").textContent = data.homeOtherTime;
+
+  document.getElementById("officeService").textContent = data.officeService;
+  document.getElementById("officeChattogram").textContent = data.officeChattogram;
+  document.getElementById("officeChattogramTime").textContent = data.officeChattogramTime;
+  document.getElementById("officeDhaka").textContent = data.officeDhaka;
+  document.getElementById("officeDhakaTime").textContent = data.officeDhakaTime;
+  document.getElementById("officeOther").textContent = data.officeOther;
+  document.getElementById("officeOtherTime").textContent = data.officeOtherTime;
+
+  document.getElementById("bnBtn").classList.toggle("active", lang === "bn");
+  document.getElementById("enBtn").classList.toggle("active", lang === "en");
+}
+
+document.getElementById("bnBtn").addEventListener("click", () => setLanguage(bn, "bn"));
+document.getElementById("enBtn").addEventListener("click", () => setLanguage(en, "en"));
+</script>
+
+</body>
+</html>
